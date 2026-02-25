@@ -1,1 +1,8 @@
+set PointCount = 3
 
+_root.createEmptyMovieClip("TerrainShape",1):
+TerrainShape.linestyle(2,0x00FF00,50)
+TerrainShape.moveTo(x,y)
+// attach the first collision point to this line  
+
+//create a loop that runs TerrainShape.lineTo(x,y) of each collisionpoint
