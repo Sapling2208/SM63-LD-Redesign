@@ -1,0 +1,25 @@
+//frame 5 line 1208
+
+_root.PlayLevelDesignerLevel = function(MarioX, MarioY, MarioXspeed, MarioYspeed, transition, messageboolean)
+{
+   _root.LevelDesignerMenu = false;
+   _root.RemoveLevelDesigner();
+   _root.LDRedCoin = 0;
+   _root.LDSilverStar = 0;
+   _root.LevelTiles = deepObjectCopy(_root.TileArray);
+   _root.LevelItems = deepObjectCopy(_root.LDItemArray);
+ //
+   _root.LevelTerrain = deepObjectCopy(_root.TerrainArray); 
+ // ^ new line of code if I need it
+   _root.LevelXsize = deepObjectCopy(_root.GridXSize);
+   _root.LevelYsize = deepObjectCopy(_root.GridYSize);
+   _root.LevelItemNum = _root.LDItemNum;
+
+
+
+
+_root.Course.Platforms.createEmptyMovieClip("invisground",_root.Course.Platforms.getNextHighestDepth());    
+
+// this is probably what I want to write new object collision to
+
+// the ' key is not used in level codes so I can use that as a separator if necessary
