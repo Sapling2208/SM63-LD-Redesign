@@ -1,8 +1,23 @@
-set PointCount = 3
+var bmpd = flash.display.BitmapData.loadBitmap("VolcanoFill_1");
+var VF1_MC = this.createEmptyMovieClip("VolcanoFill_1_tiling",this.getNextHighestDepth());
+var VF1matrix = flash.geom.Matrix();
+VF1_MC.beginBitmapFill(bmpd,VF1matrix,true,true);
+VF1_MC.moveTo(0,0);
+VF1_MC.lineTo(0,100);
+VF1_MC.lineTo(100,100);
+VF1_MC.lineTo(100,50);
+VF1_MC.lineTo(0,0);
+VF1_MC.endFill();
+VF1_MC._x = 26;
+VF1_MC._y = -64;
+VolcanoFill_1_tiling.onPress = function()
+{
+   this.startDrag();
+};
+VolcanoFill_1_tiling.onRelease = VolcanoFill_1_tiling.onReleaseOutside = function()
+{
+   this.stopDrag();
+};
 
-_root.createEmptyMovieClip("TerrainShape",1):
-TerrainShape.linestyle(2,0x00FF00,50)
-TerrainShape.moveTo(x,y)
-// attach the first collision point to this line  
 
-//create a loop that runs TerrainShape.lineTo(x,y) of each collisionpoint
+// working temporary code that creates a object using a volcano tiling and repeats the image correctly
